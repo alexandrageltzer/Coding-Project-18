@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import RateMovieButton from './RateMovieButton';
+import MovieSelector from './MovieSelector';
+import UploadButton from './UploadButton';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [selectedMovie, setSelectedMovie] = useState('Select a movie');
+  const movies = ['10 Things I Hate About You', 'The Matrix', 'Grown Ups'];
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="toolbar">
+        <div className="music-note"></div>
+        <MovieSelector movies={movies} onSelectMovie={setSelectedMovie} />
+        {selectedMovie !== 'Select a movie' && <RateMovieButton movie={selectedMovie} />}
+        <UploadButton />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
