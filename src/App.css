@@ -1,4 +1,4 @@
-/* src/App.css */
+
 .App {
   background-color: #e8f5e9;
   padding: 20px;
@@ -22,7 +22,7 @@ button:hover {
 .music-note {
   width: 50px;
   height: 50px;
-  background-image: url('/musical-note-music.svg'); /path to background image
+  background-image: url('/musical-note-music.svg'); / background image
   background-size: cover;
   display: inline-block;
 }
